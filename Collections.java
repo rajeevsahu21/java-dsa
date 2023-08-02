@@ -65,5 +65,94 @@ public class Collections {
         System.out.println(queue);
 
         System.out.println(queue.poll()); // remove the element from front of the queue and return it
+
+        System.out.println(queue.peek()); // return the front element of the queue
+
+        PriorityQueue<Integer> pq = new PriorityQueue<>(Comparator.reverseOrder()); // or we can define like this
+        // to change the priority of the queue we can use comparator // Queue<Integer>
+        // pq = new PriorityQueue<>(); by default it will implement min heap
+        pq.offer(42);
+        pq.offer(12); // adding the new element into the priority queue
+        pq.offer(24);
+        pq.offer(36);
+
+        System.out.println(pq.poll()); // remove the element from the priority queue
+        System.out.println(pq.peek());// return the top element of the queue
+        System.out.println(pq);
+        ArrayDeque<Integer> adq = new ArrayDeque<>(); // this doubly ended queue
+        adq.offer(23); // adding the new element into the doubly queue
+        adq.offer(25);
+        adq.offerFirst(12); // adding the new element at first position
+        adq.offerLast(43); // adding the new element at last position
+        System.out.println(adq.peek()); // return the element at the first position
+        System.out.println(adq.peekFirst()); // return the element at the first position
+        System.out.println(adq.peekLast()); // return the element at the last position
+        System.out.println(adq);
+        System.out.println(adq.poll()); // remove the element at the first position
+        System.out.println(adq.pollFirst()); // remove the element at the first position
+        System.out.println(adq.pollLast()); // remove the element at the last position
+        System.out.println(adq);
+
+        // Set<Integer> set = new HashSet<>(); // creating a new set which store unique
+        // elements
+        // Set<Integer> set = new LinkedHashSet<>(); // creating a new set which store
+        // unique along with order
+        Set<Integer> set = new TreeSet<>();// creating a new set which store unique in a sorted order
+        set.add(32); // add the element into the set
+        set.add(45);
+        set.add(42);
+        set.add(62);
+        set.add(12);
+        set.remove(12); // remove the element from the set
+        System.out.println(set);
+        System.out.println(set.contains(100)); // check if the set contains the element
+        System.out.println(set.isEmpty()); // check if the set is empty or not
+        System.out.println(set.size()); // return the number of elements present in the set
+        set.clear(); // clear the set
+
+        // Map<String, Integer> map = new HashMap<>();
+        Map<String, Integer> map = new TreeMap<>();
+        map.put("one", 1);
+        map.put("two", 2);
+        map.put("three", 3);
+        map.put("four", 4);
+        map.put("two", 23); // if we add duplicate key then it will be overwrite the value
+        System.out.println(map.containsKey("two")); // return true if the key exists in the set
+        System.out.println(map.containsValue(3)); // return true if the Value exists in the set
+        map.putIfAbsent("two", 2); // only adding the new value if key don't already exist
+        System.out.println(map);
+        for (Map.Entry<String, Integer> entry : map.entrySet()) {
+            System.out.println(entry);
+            System.out.println(entry.getKey());
+            System.out.println(entry.getValue());
+        }
+        for (String key : map.keySet()) {
+            System.out.println(key);
+        }
+        for (Integer value : map.values()) {
+            System.out.println(value);
+        }
+        map.remove("three");
+        System.out.println(map.isEmpty()); // return true if map is empty
+        map.clear(); // clear the map
+
+        Integer[] number = { 1, 2, 3, 4, 10, 6, 7, 8, 9 };
+        // int index = Arrays.binarySearch(number, 4);
+        // System.out.println(index);
+        Arrays.sort(number);
+        Arrays.fill(number, 12);
+        for (int i : number) {
+            System.out.println(i);
+        }
+
+        List<Integer> li = new ArrayList<>();
+        li.add(34);
+        li.add(64);
+        li.add(54);
+        li.add(44);
+        li.add(3);
+        System.out.println("min Element: " + Collections.min(li));
+        System.out.println("max Element: " + Collections.max(li));
+        System.out.println("min Element: " + Collections.frequency(li, 3));
     }
 }
