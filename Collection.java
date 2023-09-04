@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Collections {
+public class Collection {
     public static void main(String[] args) {
 
         ArrayList<String> studentsName = new ArrayList<>(); // creating a ArrayList of type String
