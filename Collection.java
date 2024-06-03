@@ -154,5 +154,14 @@ public class Collection {
         System.out.println("min Element: " + Collections.min(li));
         System.out.println("max Element: " + Collections.max(li));
         System.out.println("min Element: " + Collections.frequency(li, 3));
+
+        LinkedList<Integer> ll = new LinkedList<>();
+        ll.addLast(1);
+        ll.addLast(2);
+        ll.addFirst(0);
+        System.out.println(ll);
+        ll.removeLast();
+        ll.removeFirst();
+        System.out.println(ll);
     }
 }
